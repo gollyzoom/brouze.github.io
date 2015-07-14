@@ -228,3 +228,12 @@ p.copyright {
     background-color: #f48100;
   }
 }
+
+#splash {
+ -webkit-filter: contrast(0.5);
+filter: contrast(0.5);
+    -webkit-filter: brightness(0.5);
+filter: brightness(0.5);
+    
+
+}
