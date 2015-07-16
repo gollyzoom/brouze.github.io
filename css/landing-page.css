@@ -188,8 +188,19 @@ body {
     font-size: 5vw;
 }
 
-#learn {
+#splash .btn {
+    position: relative;
+    top: 4vh;
    border-radius: 0; 
+    background-color: darkorange;
+    color: floralwhite;
+    border: none;
+    width: 20%;
+    min-width: 175px;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 2vw;
+    
 }
 
 #first-splash {
