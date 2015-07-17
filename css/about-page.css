@@ -169,7 +169,7 @@ body {
 }
 
 #aSplash {
-    background: rgb(255, 0, 0);
+    background: rgb(255, 153, 51);
     background-size: cover;
     width: 100vw;
     padding-bottom: 15%;
@@ -183,8 +183,10 @@ body {
     font-size: 8vw;  
 }
 
-#aSplash h2{
-    font-size: 5vw;
+#aSplash h3{
+    font-size: 3vw;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 #aSplash.btn {
@@ -205,5 +207,9 @@ body {
 #first-aSplash {
     width: 100vw;
     padding-bottom: 40%;
-    background: #fff;
+    background: floralwhite;
+    background-size: cover;
+    min-height: inherit;
+    color: rgb(0,0,0);
+    text-align: center;
 }
