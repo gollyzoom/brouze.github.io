@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
     <title>Brouze | Study That Shit</title>
 
@@ -78,7 +81,7 @@
             <hr>
             <p>At <b>Study that Shit</b>, our mission is to make it easier for those who need academic help. With our website, students can look up tutors by school or area code. This way, users can be taught by tutors who have gone through the same teachers and courses, giving them the experienced academic guidance most suited to their own school.</p>
 
-            <button type="button" class="btn btn-default btn-lg">
+            <button type="button" class="btn btn-default btn-lg" onclick = "authenticate()">
                 <b>SIGN UP</b>
             </button>
 
@@ -114,10 +117,68 @@
     <div class="foot">
         <h5>Copyright 2015 - YAAAS Labs</h5>
     </div>
-    
-  
+      <script>
+        var USERS_LOCATION = 'https://brouze.firebaseio.com/users';
+        var userData;
+        var newUser;
+        var ref = new Firebase("https://brouze.firebaseio.com");
+        function authenticate(){
+        ref.authWithOAuthPopup("google", function(error, authData) {
+          if (error) {
+            console.log("Login Failed!", error);
+          } else {
+              
+            console.log("Authenticated successfully with payload:", authData);
+              userData = authData.uid;
+              console.log("here is the key: " + userData);
+              checkIfUserExists(userData,authData.provider,authData);
+              
+          }
+        });
+        }
+          function Username() {
+            var person = prompt("Please enter your name", "Username");
+            if (person != null) {
+                var usersRef = ref.child("users")
+                    var usernameRef = usersRef.child(userData);
+                    usernameRef.update({
+                      "username": person
+                    });
+            }
+              document.write("hello " + person);
+        }// Get a reference to our posts
 
+        function userExistsCallback(userId, exists) {
+          if (exists) {
+            newUser = false;
+            //alert('user ' + userId + ' exists!');
+          } else {
+            //alert('user ' + userId + ' does not exist!');
+              newUser = true;
+              //console.log("newUser is" + newUser);//here it is true
+          }
+        }
 
+        // Tests to see if /users/<userId> has any data. 
+        function checkIfUserExists(userId,dataProvider,data){
+          var usersRef = new Firebase(USERS_LOCATION);
+          usersRef.child(userId).once('value', function(snapshot) {
+            var exists = (snapshot.val() !== null);
+            userExistsCallback(userId, exists);
+              console.log("right before " + newUser);//here it is false
+              if(newUser == true){
+                ref.child("users").child(userId).set({
+                provider: dataProvider, 
+                name: data.google.displayName
+              //some more user data
+                });
+                 // Username();
+              }
+             // console.log(data.google.profileImageURL);
+          });
+        }
+        
+     </script>
 
 
     <!-- jQuery -->
@@ -125,7 +186,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+    
 </body>
 
 </html>
