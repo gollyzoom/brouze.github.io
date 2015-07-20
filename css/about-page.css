@@ -204,7 +204,7 @@ body {
 }
 
 #bSplash {
-    background: url(http://www.minicoming.com/wp-content/miniwallpaper/20121206/twxgneqlv0n53.jpg) no-repeat center center;
+    background: rgb(0,102,204);
     background-size: cover;
     width: 100vw;
     padding-bottom: 15%;
