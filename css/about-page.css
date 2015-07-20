@@ -195,3 +195,10 @@ body {
   margin-left: 200px;
   margin-right: 200px;
 }
+
+#aSplash h5 {
+  font-size: 1vw;
+  margin-bottom: 15px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
