@@ -201,7 +201,6 @@ body {
 }
 
 #bSplash {
-    background: rgb(255,255,255);
     background-size: cover;
     width: 100vw;
     padding-bottom: 15%;
@@ -231,4 +230,12 @@ body {
   margin-bottom: 15px;
   margin-left: 15%;
   margin-right: 15%;
+}
+
+body {
+  background: url(../img/wood.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
 }
