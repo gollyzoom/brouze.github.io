@@ -170,7 +170,7 @@ body {
 }
 
 #aSplash {
-    background: rgb(255, 153, 51);
+    background-color: darkorange;
     background-size: cover;
     width: 100vw;
     padding-bottom: 15%;
@@ -197,6 +197,40 @@ body {
 }
 
 #aSplash h5 {
+  font-size: 1vw;
+  margin-bottom: 15px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+#bSplash {
+    background: url(http://www.ukwallpaper.co.uk/imgs/products/pencil-ends.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    padding-bottom: 15%;
+    padding-top: 50px;
+    min-height: inherit;
+    color: floralwhite;
+    text-align: center;
+}
+
+#bSplash h1 {
+    font-size: 5vw;  
+    margin-bottom: 7%;
+}
+
+#bSplash h3{
+    font-size: 3vw;
+}
+
+#bSplash h4 {
+  font-size: 2vw;
+  margin-bottom: 7%;
+  margin-left: 17%;
+  margin-right: 17%;
+}
+
+#bSplash h5 {
   font-size: 1vw;
   margin-bottom: 15px;
   margin-left: 15%;
