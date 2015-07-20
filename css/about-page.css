@@ -181,23 +181,9 @@ body {
 
 #aSplash h1 {
     font-size: 5vw;  
+    margin-bottom: 100px;
 }
 
 #aSplash h3{
     font-size: 3vw;
-}
-
-#aSplash.btn {
-    position: relative;
-    top: 4vh;
-    border-radius: 0; 
-    background-color: darkorange;
-    color: floralwhite;
-    border: none;
-    width: 20%;
-    min-width: 175px;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    font-size: 2vw;
-    
 }
