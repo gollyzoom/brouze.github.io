@@ -159,6 +159,10 @@ p.copyright {
     margin: 15px 0 0;
 }
 
+img:hover{
+    opacity: 0.2;
+}
+
 body {
     margin-top: 50px;
 }
