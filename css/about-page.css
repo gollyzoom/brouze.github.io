@@ -185,12 +185,7 @@ body {
 }
 
 #aSplash h1 {
-    font-size: 5vw;  
     margin-bottom: 7%;
-}
-
-#aSplash h3{
-    font-size: 3vw;
 }
 
 #aSplash h4 {
@@ -206,7 +201,7 @@ body {
 }
 
 #bSplash {
-    background: floralwhite;
+    background: rgb(255,255,255);
     background-size: cover;
     width: 100vw;
     padding-bottom: 15%;
@@ -217,7 +212,6 @@ body {
 }
 
 #bSplash h1 {
-    font-size: 5vw;  
     margin-bottom: 7%;
 }
 
@@ -234,7 +228,6 @@ body {
 }
 
 #bSplash h5 {
-  font-size: 1vw;
   margin-bottom: 15px;
   margin-left: 15%;
   margin-right: 15%;
