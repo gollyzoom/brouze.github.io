@@ -184,10 +184,13 @@ body {
     margin-bottom: 75px;
 }
 
+#aSplash h3{
+    font-size: 3vw;
+}
+
 #aSplash h4 {
   font-size: 2vw;
   margin-bottom: 75px;
-}
-#aSplash h3{
-    font-size: 3vw;
+  margin-left: 200px;
+  margin-right: 200px;
 }
