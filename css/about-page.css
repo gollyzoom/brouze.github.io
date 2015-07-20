@@ -165,10 +165,8 @@ p.copyright {
     margin: 15px 0 0;
 }
 
-img.linking{
-    &:hover {
+img.linking:hover{
     opacity: 0.2;
-  }
 }
 
 body {
