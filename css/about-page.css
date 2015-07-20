@@ -239,3 +239,13 @@ body {
   -o-background-size: cover;
   -webkit-background-size: cover;
 }
+
+.foot {
+    width:100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    color: dimgray;
+    background-color: white;
+    
+}
