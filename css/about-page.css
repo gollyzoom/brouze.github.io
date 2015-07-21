@@ -62,17 +62,14 @@ h6 {
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-//try fixing alignment of columns
-.row-centered {
-    text-align:center;
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
 }
-.col-centered {
-    display:inline-block;
-    float:none;
-    /* reset the text-align */
-    text-align:center;
-    /* inline-block space fix */
-    margin-right:-4px;
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 @media(max-width:767px) {
