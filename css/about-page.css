@@ -211,7 +211,7 @@ body {
 }
 
 #bSplash h1 {
-    margin-bottom: 7%;
+    margin-bottom: 4%;
 }
 
 #bSplash h3{
@@ -251,5 +251,5 @@ body {
 }
 
  .navbar {
-    background: rgba(255,255,255,0.7);
+    background: opacity 0.7;
   }
