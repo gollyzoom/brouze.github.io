@@ -201,6 +201,7 @@ body {
 #aSplash h4 {
   margin-left: 17%;
   margin-right: 17%;
+   margin-bottom: 3%;
 }
 
 #bSplash {
@@ -216,6 +217,12 @@ body {
 
 #bSplash h1 {
     margin-bottom: 3%;
+}
+
+#bSplash h4{
+     margin-bottom: 3%;
+     margin-left: 17%;
+  margin-right: 17%;
 }
 
 #bSplash h3{
