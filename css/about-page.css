@@ -142,6 +142,10 @@ h6 {
     margin-top: 0;
 }
 
+.col-sm-3{
+    background-color: rgb(255, 255, 255. 0.6);
+}
+
 @media(max-width:1199px) {
     ul.banner-social-buttons {
         float: left;
@@ -261,5 +265,5 @@ body {
 }
 
  .navbar {
-    opacity: 0.7;
+    background: rgba(255,255,255,0.7);
   }
