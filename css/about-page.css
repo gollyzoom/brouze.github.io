@@ -214,6 +214,7 @@ body {
 }
 
 #bSplash {
+    background-color: floralwhite;
     background-size: cover;
     width: 100vw;
     padding-bottom: 15%;
@@ -240,15 +241,15 @@ body {
   margin-left: 15%;
   margin-right: 15%;
 }
-
+ /*
 body {
-  background: url(../img/wood.jpg) no-repeat center center fixed; 
+ background: url(../img/wood.jpg) no-repeat center center fixed; 
   background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
 }
-
+*/
 .foot {
     width:100%;
     padding-top: 1%;
