@@ -11,6 +11,10 @@
     <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include the jQuery Mobile library -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <title>Brouze | Study That Shit</title>
 
@@ -109,7 +113,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="foot">
         <h5>Copyright 2015 - YAAAS Labs</h5>
     </div>
@@ -123,12 +127,12 @@
           if (error) {
             console.log("Login Failed!", error);
           } else {
-              
+
             console.log("Authenticated successfully with payload:", authData);
               userData = authData.uid;
               console.log("here is the key: " + userData);
               checkIfUserExists(userData,authData.provider,authData);
-              
+
           }
         });
         }
@@ -136,8 +140,9 @@
             var person = prompt("Please enter your name", "Username");
             if (person != null) {
                 var usersRef = ref.child("users")
-                    var usernameRef = usersRef.child(userData);
-                    usernameRef.update({
+                var usernameRef = usersRef.child(userData);
+                var basicRef = usernameRef.child("basicInfo");
+                    basicRef.update({
                       "username": person
                     });
             }
@@ -155,7 +160,7 @@
           }
         }
 
-        // Tests to see if /users/<userId> has any data. 
+        // Tests to see if /users/<userId> has any data.
         function checkIfUserExists(userId,dataProvider,data){
           var usersRef = new Firebase(USERS_LOCATION);
           usersRef.child(userId).once('value', function(snapshot) {
@@ -163,17 +168,26 @@
             userExistsCallback(userId, exists);
               console.log("right before " + newUser);//here it is false
               if(newUser == true){
+                 
                 ref.child("users").child(userId).set({
-                provider: dataProvider, 
-                name: data.google.displayName
+                basicInfo:{
+                    provider: dataProvider,
+                    name: data.google.displayName,
+                    profilepic: data.google.profileImageURL
+                }
+                 
               //some more user data
                 });
-                 Username();
+                  window.location.replace("newuserform.html?username="+data.uid);
+                 //Username();*/
+              }
+              else{
+                  window.location.replace("profile.html?username="+data.uid);
               }
              // console.log(data.google.profileImageURL);
           });
         }
-        
+          
      </script>
 
 
@@ -182,7 +196,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
+
 </body>
 
 </html>

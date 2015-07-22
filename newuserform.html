@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body onload="parseQueryString()">
 
 <div class="container">
   <h2>Hello Jane! Welcome to Brouze</h2>
@@ -76,12 +76,63 @@
       <label for="comment">Bio:</label>
       <textarea class="form-control" maxlength="600" rows="5" id="comment" placeholder="A summary of your education will help people get to know you."></textarea>
     </div>
-    <button type="button" class="btn btn-default btn-lg">
+    <button type="button" class="btn btn-default btn-lg" onclick="accessInfo()">
                 <b>Submit</b>
     </button>
   </form>
   
 </div>
+<script>
+        var ref = new Firebase("https://brouze.firebaseio.com");
+        var userData;//data.uid
+        var parseQueryString = function( ) {
+              var info;
+              var queryString = window.location.search;
+              queryString = queryString.substring(1);
+              var params = {}, queries, temp, i, l;
 
+                // Split into key/value pairs
+                queries = queryString.split("&");
+
+                // Convert the array of strings into an object
+                for ( i = 0, l = queries.length; i < l; i++ ) {
+                    temp = queries[i].split('=');
+                    params[temp[0]] = temp[1];
+                }
+                console.log("dude");
+                console.log(params["username"]);
+                userData = params["username"];
+                //accessInfo(params["username"]);
+        };    
+        function accessInfo(){
+            var school = $("#school").val();
+            var zip = $("#zipcode").val();
+            var username = $("#usr").val();
+            var grade = $("#grade").val();
+            var age = $("#age").val();
+            var blurb = $("#comment").val();
+            console.log(school);
+            console.log(zip);
+            console.log(username);
+            console.log(grade);
+            console.log(age);
+            var usersRef = ref.child("users")
+            var usernameRef = usersRef.child(userData);
+            var basicRef = usernameRef.child("basicInfo");
+                basicRef.update({
+                    "username": username,
+                    "zipcode": zip,
+                    "grade": grade,
+                    "age": age,
+                    "school": school,
+                    "blurb":blurb
+                    
+                });
+            redirect();
+        }
+        function redirect(){
+             window.location.replace("profile.html?username="+userData);
+        }
+</script>
 </body>
 </html>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
+<html>
+  <head>
+      
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,9 +15,15 @@
 
     <!-- Custom CSS -->
     <link href="css/profile-page.css" rel="stylesheet">
-
-
-    <!-- Custom Fonts -->
+      
+      
+      
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+      
+     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
@@ -28,12 +33,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-</head>
-
-<body>
-
-    <!-- Fixed navbar -->
+      
+  </head>
+  <body onload="parseQueryString()">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -43,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">Study That Shit</a>
+                <a class="navbar-brand" href="index.html">Study That Shit</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -51,7 +53,7 @@
                 </ul>
                  <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface <span class="caret"></span></a>
+                        <a id="dropMenu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="active"><a href="#">Profile</a></li>
                             <li><a href="#">Saved Tutors</a></li>
@@ -173,16 +175,70 @@
     </div>
 
 
+    
+      <script>
+          var parseQueryString = function( ) {
+              var info;
+              var queryString = window.location.search;
+              queryString = queryString.substring(1);
+              var params = {}, queries, temp, i, l;
 
+                // Split into key/value pairs
+                queries = queryString.split("&");
 
+                // Convert the array of strings into an object
+                for ( i = 0, l = queries.length; i < l; i++ ) {
+                    temp = queries[i].split('=');
+                    params[temp[0]] = temp[1];
+                }
+                console.log("dude");
+                console.log(params["username"]);
+                accessInfo(params["username"]);
+        };
+        function accessInfo(info){
+             console.log("what is the info" );
+             console.log(info);
+              // Get a reference to our users
+              var ref = new Firebase("https://brouze.firebaseio.com/users/" + info+ "/basicInfo");
+              ref.on("value", function(snapshot) {
+              var currentUser = snapshot.val();
+              console.log(currentUser);
+              console.log(currentUser.username);
+              console.log(currentUser.name);
+              //createDiv(currentUser.name);
+              //createImg(currentUser.profilepic);
+              //createDiv(currentUser.name);
+                //document.write("hello " + currentUser.username);'
+               //createH1(currentUser.name);
+                  // name school zip age grade
+                  //time to decorate!
+              $("#profileImage").attr('src',currentUser.profilepic);
+              $("#name").text(currentUser.name);
+              $("#school").text(currentUser.school);  
+              $("#zip").text(currentUser.zipcode);
+              $("#age").text(currentUser.age);
+              $("#grade").text(currentUser.grade);
+              $("#dropMenu").text(" hi " + currentUser.username);
+              $("#bio").text(currentUser.blurb);
+              $("body").fadeIn(1000);
+            }, function (errorObject) {
+              console.log("The read failed: " + errorObject.code);
+            });
+        
+        }
+          function createDiv(divText){
+            //$('#title').append('<p> hello ' + divText + '<p>');
+              $("#name").text(divText);
+          }
+          function createImg(url){
+            var img = $('<img id="dynamic">'); //Equivalent: $(document.createElement('img'))
+            //img.attr('src', url);
+            //img.attr('shape',"circle");
+            img.appendTo('body');
 
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
+              $('body').append('<h1> hello ' + divText + '<p>');
+          }
+      </script>
+      </script>
+  </body>
 </html>
