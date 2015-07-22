@@ -16,7 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/profile-page.css" rel="stylesheet">
- 
+
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -34,114 +34,153 @@
 <body>
 
     <!-- Fixed navbar -->
-    
+
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Study That Shit</a>
-        </div>
-    
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search Tutors">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Study That Shit</a>
             </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li class="active"><a href="#">Profile</a></li>
-                <li><a href="#">Saved Tutors</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search Tutors">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="#">Profile</a></li>
+                            <li><a href="#">Saved Tutors</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
     </nav>
 
 
     <!--Content-->
     <div id="title" class="container">
-        <img src="http://www.imran.com/xyper_images/icon-user-default.png" style="width: 160px;">
-        <h1>Buttface McGee</h1>
-        <h2>Saratoga High School</h2>
-        <h2>Zipcode: 95070</h2>
-        <h2>Age: 17</h2>
-        <h2>Grade: Upcoming Senior</h2>
-        
-        <h2>Summary</h2>
-        <h3>Bleh abe asdflkj t e sdf the sd f the fac t</h3>
-        
-        <h2>Can Tutor:</h2>
-        <table class="table">
-            <thead>
-              <tr>
-                <th>Class</th>
-                <th>Teacher</th>
-                <th>Year Taken</th>
-                <th>Grade/Score</th>
-                <th>AP/SAT/ACT</th>
-                <th>Price per Hour</th>
-                <th>Comments</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>AP Biology</td>
-                <td>Lenz</td>
-                <td>2014-15</td>
-                <td>A (both semesters)</td>
-                <td>AP: 5, SAT: 790</td>
-                <td>$50</td>
-                <td>I helped my friends in this class all year long. Biology comes easily to me, and I am used to explaining concepts to many people.</td>
-              </tr>
-              <tr>
-                <td>APUSH</td>
-                <td>Anzalone</td>
-                <td>2014-15</td>
-                <td>A- (both semesters)</td>
-                <td>AP: 5, SAT: 800</td>
-                <td>$60</td>
-                <td>Over the course of the year, I became close with Mrs. Anzalone and know exactly what she wants out of homework and assignments. My homework grade was an A+.</td>
-              </tr>
-              <tr>
-                <td>AP Calculus BC</td>
-                <td>Warmuth</td>
-                <td>2014-15</td>
-                <td>A+ (Sem 1), A (Sem 2)</td>
-                <td>AP: 5, SAT: 800</td>
-                <td>$70</td>
-                <td>I have had previous experience tutoring math to kids at camps and tutoring services.</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <h2>Needs Help In:</h2>
-          <h3>AP English Literature</h3>
-          
-          <h2></h2>
-        
-    </div>
+        <div class="row" id="headInfo">
+            <div class="col-md-5"> <img class="img-responsive" id="profileImage" src="http://www.imran.com/xyper_images/icon-user-default.png"></div>
+            <div id="basicInfo" class="col-md-7">
+                <h1 id="name">Buttface McGee</h1>
+                <h2 id="school">Saratoga High School</h2>
+                <h2 id="zip">Zipcode: 95070</h2>
+                <h2 id="age">Age: 17</h2>
+                <h2 id="grade">Grade: 12</h2>
+            </div>
+
+        </div>
+
+        <div class="row" id="bio">
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                <p>
+                    <hr>
+        </div>
+
+        <div class="row" id="canTutor">
+            <h2>Can Tutor:</h2>
+            <div class="table-responsive">
+                <table class="table" id="canTutorTable">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Teacher</th>
+                            <th>Year Taken</th>
+                            <th>Grade/Score</th>
+                            <th>AP/SAT/ACT</th>
+                            <th>$/hour</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AP Biology</td>
+                            <td>Lenz</td>
+                            <td>2014-15</td>
+                            <td>A (both semesters)</td>
+                            <td>AP: 5, SAT: 790</td>
+                            <td>$50</td>
+                            <td>I helped my friends in this class all year long. Biology comes easily to me, and I am used to explaining concepts to many people.</td>
+                        </tr>
+                        <tr>
+                            <td>APUSH</td>
+                            <td>Anzalone</td>
+                            <td>2014-15</td>
+                            <td>A- (both semesters)</td>
+                            <td>AP: 5, SAT: 800</td>
+                            <td>$60</td>
+                            <td>Over the course of the year, I became close with Mrs. Anzalone and know exactly what she wants out of homework and assignments. My homework grade was an A+.</td>
+                        </tr>
+                        <tr>
+                            <td>AP Calculus BC</td>
+                            <td>Warmuth</td>
+                            <td>2014-15</td>
+                            <td>A+ (Sem 1), A (Sem 2)</td>
+                            <td>AP: 5, SAT: 800</td>
+                            <td>$70</td>
+                            <td>I have had previous experience tutoring math to kids at camps and tutoring services.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="row" id="needsHelp">
+            <h2>Needs Help In:</h2>
+                     <div class="table-responsive">
+                <table class="table" id="canTutorTable">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Teacher</th>
+                  
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AP English</td>
+                            <td>Lenz</td>
     
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
     <div class="foot">
         <h5>Copyright 2015 - YAAAS Labs</h5>
     </div>
-    
-  
+
+
 
 
 

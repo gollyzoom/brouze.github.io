@@ -3,7 +3,7 @@ body{
     height: 100%;
     overflow-x: hidden;
     font-weight: 400;
-    margin-top: 50px;
+
 
 }
 
@@ -169,14 +169,98 @@ img:hover{
 
 
 #title {
-    color: white;
+
     width: 100%;
     /*
     padding-top: 30px;
     padding-bottom: 40px;
     */
-    background-color: darkorange;
+    background-color: white;
+    text-align: center;
+    
 }
+
+
+#profileImage {
+    border-radius: 100%;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#name {
+
+    font-size: 7vw; 
+    font-weight: 700;
+}
+
+
+#school #zip #age #grade {
+
+    font-size: 4vw;
+    line-height: 15vw;
+}
+
+
+
+#basicInfo{
+    font-weight: 400;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+#bio {
+    font-weight: 400;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    text-align: justify;
+    font-size: 1.5em;  
+    padding-top: 5vw;
+   
+}
+
+#canTutor {
+   
+    margin-left: 8vw;
+    margin-right: 8vw;
+    text-align: left;
+    
+}
+#canTutor h2 {
+    font-size: 2em;
+ 
+}
+
+#needsHelp {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    text-align: left;
+    
+}
+
+
+#needsHelp h2{
+    font-size: 2em;
+}
+
+table {
+    border-spacing: 50px 0;
+    
+}
+th {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+tr td {
+    vertical-align: middle;
+}
+
+th, td {
+    padding: 50px;
+}
+
 
 
 .foot {
@@ -185,6 +269,7 @@ img:hover{
     padding-bottom: 1%;
     text-align: center;
     color: dimgray;
+    border-top: 1px solid lightgray;
     
 
 }
