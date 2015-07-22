@@ -260,6 +260,20 @@ th, td {
     padding: 50px;
 }
 
+@media(max-width:767px){
+    
+    #name {
+
+    font-size: 10vw; 
+    font-weight: 700;
+}
+    #basicInfo h2 {
+    font-size: 5vw;
+
+}
+
+}
+
 
 
 .foot {
