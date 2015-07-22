@@ -182,6 +182,12 @@ img:hover{
     
 }
 
+#headInfo {
+    width: 100%;
+    padding-right: 8vw;
+    padding-left: 8vw;
+}
+
 
 #profileImage {
     width: 40vw;
