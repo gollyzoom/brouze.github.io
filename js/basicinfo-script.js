@@ -3,36 +3,27 @@ $(document).ready(function(){
 
 		$('#registration-form').validate({
 	    rules: {
-	       name: {
+	       username: {
 	        required: true,
 	       required: true
-	      },
+	       },
 		  
-		 username: {
+		 school: {
 	        minlength: 6,
-			maxlength:18,
+		maxlength:40,
 	        required: true
 	      },
-		  
-		  password: {
-				required: true,
-				minlength: 6
-			},
-			confirm_password: {
-				required: true,
-				minlength: 6,
-				equalTo: "#password"
-			},
-		  
-	      email: {
-	        required: true,
-	        email: true
+	      
+	      zipcode: {
+	        minlength: 5,
+		maxlength:10,
+	        required: true
 	      },
-		  
+	      	  
 	     
-		   address: {
-	      	minlength: 10,
-	        required: true
+		   bio: {
+	      	maxlength: 600,
+	        required: false
 	      },
 		  
 		  
