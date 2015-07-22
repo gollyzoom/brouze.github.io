@@ -116,7 +116,7 @@
             console.log(username);
             console.log(grade);
             console.log(age);
-            var usersRef = ref.child("users")
+            var usersRef = ref.child("users");
             var usernameRef = usersRef.child(userData);
             var basicRef = usernameRef.child("basicInfo");
                 basicRef.update({
