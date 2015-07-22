@@ -178,7 +178,7 @@
                  
               //some more user data
                 });
-                  window.location.replace("newuserform.html?username="+data.uid);
+                  redirect()
                  //Username();*/
               }
               else{
@@ -186,6 +186,9 @@
               }
              // console.log(data.google.profileImageURL);
           });
+        }
+        function redirect(){
+            window.location.replace("newuserform.html?username="+data.uid);
         }
           
      </script>
