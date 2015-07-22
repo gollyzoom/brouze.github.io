@@ -56,7 +56,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface<span class="caret"></span></a>
+                        <a id="dropMenu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li class="active"><a href="#">Profile</a></li>
                             <li><a href="#">Saved Tutors</a></li>
@@ -186,10 +186,8 @@
             queryString = queryString.substring(1);
             var params = {},
                 queries, temp, i, l;
-
             // Split into key/value pairs
             queries = queryString.split("&");
-
             // Convert the array of strings into an object
             for (i = 0, l = queries.length; i < l; i++) {
                 temp = queries[i].split('=');
@@ -199,7 +197,6 @@
             console.log(params["username"]);
             accessInfo(params["username"]);
         };
-
         function accessInfo(info) {
             console.log("what is the info");
             console.log(info);
@@ -229,20 +226,16 @@
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
             });
-
         }
-
         function createDiv(divText) {
             //$('#title').append('<p> hello ' + divText + '<p>');
             $("#name").text(divText);
         }
-
         function createImg(url) {
             var img = $('<img id="dynamic">'); //Equivalent: $(document.createElement('img'))
             //img.attr('src', url);
             //img.attr('shape',"circle");
             img.appendTo('body');
-
             $('body').append('<h1> hello ' + divText + '<p>');
         }
     </script>
