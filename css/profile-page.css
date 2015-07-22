@@ -3,6 +3,7 @@ body{
     height: 100%;
     overflow-x: hidden;
     font-weight: 400;
+    margin-top: 80px;
 
 
 }
@@ -196,18 +197,16 @@ img:hover{
 }
 
 
-#school #zip #age #grade {
-
-    font-size: 4vw;
-    line-height: 15vw;
-}
-
-
 
 #basicInfo{
     font-weight: 400;
     padding-top: 3%;
     padding-bottom: 3%;
+}
+
+#basicInfo h2 {
+    font-size: 3.4vw;
+
 }
 
 #bio {
