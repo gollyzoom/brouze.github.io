@@ -86,7 +86,7 @@
 
         <div class="row" id="bio">
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+            <p id="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
                 <p>
                     <hr>
         </div>
@@ -215,12 +215,12 @@
               $("#profileImage").attr('src',currentUser.profilepic);
               $("#name").text(currentUser.name);
               $("#school").text(currentUser.school);  
-              $("#zip").text(currentUser.zipcode);
-              $("#age").text(currentUser.age);
-              $("#grade").text(currentUser.grade);
-              $("#dropMenu").text(" hi " + currentUser.username);
-              $("#bio").text(currentUser.blurb);
-              $("body").fadeIn(1000);
+              $("#zip").text("Zipcode: " + currentUser.zipcode);
+              $("#age").text("Age: " + currentUser.age);
+              $("#grade").text("Grade: " + currentUser.grade);
+              $("#dropMenu").text("Hi " + currentUser.username);
+              $("#desc").text(currentUser.blurb);
+              $("body").fadeIn(10);
             }, function (errorObject) {
               console.log("The read failed: " + errorObject.code);
             });
