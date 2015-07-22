@@ -163,6 +163,7 @@ p.copyright {
 
 img:hover{
     opacity: 0.7;
+    /*do some fancy hover stuff here-should be able to edit profile pic*/
 }
 
 
@@ -170,8 +171,10 @@ img:hover{
 #title {
     color: white;
     width: 100%;
+    /*
     padding-top: 30px;
     padding-bottom: 40px;
+    */
    text-align: center;
     background-color: darkorange;
 }
@@ -183,26 +186,6 @@ img:hover{
 #title h3 {
     font-weight: 400;
     font-size: 6vw;  
-}
-
-#gif {
-padding-top: 40px;
-  text-align: center;  
-    padding-bottom: 40px;
-}
-
-#gif  img {
-  width: 40vw;  
-    max-width: 400px;
-}
-
-#email {
-    color: white;
-    width: 100%;
-    text-align: center;
-    background-color: darkorange;
-    padding-top: 10px;
-    padding-bottom: 20px;
 }
 
 
