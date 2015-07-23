@@ -280,12 +280,17 @@ th, td {
 }
 
 
-.input-group{
+@media only screen and (max-width : 768px) {
+    .input-group{
     margin-left: 5vw;
-    margin-right: 5vw;
+        margin-right: 5vw;
     
     
 }
+
+
+    }
+
 
 
 .foot {
