@@ -90,6 +90,7 @@
                 <h2 id="zip">Zipcode: 95070</h2>
                 <h2 id="age">Age: 17</h2>
                 <h2 id="grade">Grade: 12</h2>
+                <h2 id="prefLoc">Preferred tutoring location: Library</h2>
             </div>
 
         </div>
@@ -233,6 +234,7 @@
                     caret " aria-hidden="
                     true "></span>");
                 $("#desc").text(currentUser.blurb);
+                $("preferredLoc").text("Preferred tutoring location: " + currentUser.username);
                 $("body").fadeIn(10);
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
