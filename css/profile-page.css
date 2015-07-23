@@ -1,5 +1,5 @@
 body{
-   display: none;
+    display: none;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -214,8 +214,13 @@ img:hover{
 }
 
 #basicInfo h2 {
+    font-weight: 400;
     font-size: 3.4vw;
 
+}
+
+b { 
+   font-weight: 700; 
 }
 
 #bio {
@@ -269,19 +274,12 @@ th, td {
     padding: 50px;
 }
 
-@media(max-width:767px){
-    
-    #name {
 
-    font-size: 10vw; 
-    font-weight: 700;
-}
-    #basicInfo h2 {
-    font-size: 5vw;
-
+#preferredLoc {
+    font-size: 2.5vw;
 }
 
-}
+
 
 
 
