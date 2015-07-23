@@ -5,6 +5,8 @@ body {
     overflow-x: hidden;
     font-weight: 400;
     margin-top: 80px;
+    margin-left: 8vw;
+    margin-right: 8vw;
 }
 
 body,
@@ -241,11 +243,6 @@ b {
     text-align: left;
 }
 
-.table-responsive {
-    margin-left: 8vw;
-    margin-right: 8vw;
-    
-}
 
 #needsHelp h2 {
     font-size: 2em;
@@ -287,6 +284,7 @@ td {
         margin-left: auto;
         margin-right: auto;
     }
+    
     .input-group {
         margin-left: 5vw;
         margin-right: 5vw;
