@@ -210,6 +210,12 @@ b {
     font-weight: 700;
 }
 
+#tutor table {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    
+}
+
 #bio {
     font-weight: 400;
     margin-left: 8vw;
@@ -307,4 +313,5 @@ td {
 
 .navbar {
     background: rgba(255, 255, 255, 0.7);
+    overflow-y: hidden;
 }
