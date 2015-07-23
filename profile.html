@@ -104,8 +104,17 @@
 
         <div class="row" id="canTutor">
             <div id="canTutorHeader">
-                <h2>Can Tutor:</h2>
-                <a href="form-two.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                <div class="col-md-6">
+                    <h2>Can Tutor:</h2>
+                </div>
+                <div class="col-md-6">
+                    <div class="pull-right">
+                        <a href="form-two.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                    </div>
+                    
+                </div>
+                
+                
             </div>
             
             <div class="table-responsive">
@@ -233,7 +242,7 @@
                 $("#zip").text("Zipcode: " + currentUser.zipcode);
                 $("#age").text("Age: " + currentUser.age);
                 $("#grade").text("Grade: " + currentUser.grade);
-                $("#dropMenu").text("Hi " + currentUser.username + " ");
+                $("#dropMenu").text("Hi " + currentUser.username + "   ");
                 $("#dropMenu").append('<span class="caret" aria-hidden="true"></span>');
                 $("#desc").text(currentUser.blurb);
                 $("prefLoc").text("Preferred tutoring location: " + currentUser.username);

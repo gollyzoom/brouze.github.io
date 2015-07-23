@@ -1,12 +1,10 @@
-body{
+body {
     display: none;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
     font-weight: 400;
     margin-top: 80px;
-
-
 }
 
 body,
@@ -163,15 +161,12 @@ p.copyright {
     margin: 15px 0 0;
 }
 
-img:hover{
+img:hover {
     opacity: 0.7;
     /*do some fancy hover stuff here-should be able to edit profile pic*/
 }
 
-
-
 #title {
-
     width: 100%;
     /*
     padding-top: 30px;
@@ -179,7 +174,6 @@ img:hover{
     */
     background-color: white;
     text-align: center;
-    
 }
 
 #headInfo {
@@ -188,26 +182,20 @@ img:hover{
     padding-left: 8vw;
 }
 
-
 #profileImage {
     width: 40vw;
     border-radius: 100%;
-    display:block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    
 }
 
-
 #name {
-
-    font-size: 7vw; 
+    font-size: 7vw;
     font-weight: 700;
 }
 
-
-
-#basicInfo{
+#basicInfo {
     font-weight: 400;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -216,11 +204,10 @@ img:hover{
 #basicInfo h2 {
     font-weight: 400;
     font-size: 3.4vw;
-
 }
 
-b { 
-   font-weight: 700; 
+b {
+    font-weight: 700;
 }
 
 #bio {
@@ -228,39 +215,34 @@ b {
     margin-left: 8vw;
     margin-right: 8vw;
     text-align: justify;
-    font-size: 1.5em;  
+    font-size: 1.5em;
     padding-top: 5vw;
-   
 }
 
 #canTutor {
-   
     margin-left: 8vw;
     margin-right: 8vw;
     text-align: left;
-    
 }
+
 #canTutor h2 {
     font-size: 2em;
- 
 }
 
 #needsHelp {
     margin-left: 8vw;
     margin-right: 8vw;
     text-align: left;
-    
 }
 
-
-#needsHelp h2{
+#needsHelp h2 {
     font-size: 2em;
 }
 
 table {
     border-spacing: 50px 0;
-    
 }
+
 th {
     font-weight: 700;
     font-size: 1.3em;
@@ -270,40 +252,40 @@ tr td {
     vertical-align: middle;
 }
 
-th, td {
+th,
+td {
     padding: 50px;
 }
-
 
 #prefLoc {
     font-size: 2.5vw;
 }
 
+@media only screen and (max-width: 768px) {
+    
+    #profileImage {
+    width: 80vw;
 
-@media only screen and (max-width : 768px) {
-    .input-group{
-    margin-left: 5vw;
-        margin-right: 5vw;
-    
-    
 }
-
-
+    
+    
+    .input-group {
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
+}
 
 
 
 .foot {
-    width:100%;
+    width: 100%;
     padding-top: 1%;
     padding-bottom: 1%;
     text-align: center;
     color: dimgray;
     border-top: 1px solid lightgray;
-    
-
 }
 
- .navbar {
-    background: rgba(255,255,255,0.7);
-  }
+.navbar {
+    background: rgba(255, 255, 255, 0.7);
+}
