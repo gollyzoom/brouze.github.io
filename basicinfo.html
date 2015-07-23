@@ -94,6 +94,11 @@
                 </label>
               </div>
           </div>
+          <div class="form-group">
+              <label>
+                  Other<input type="text" maxlength="40" class="form-control" id="other" placeholder="Another location">
+              </label>
+          </div>
       </label>
     <div class="form-group">
       <label for="comment">Bio:</label>
@@ -137,6 +142,7 @@
             var loc1 = $("#lib").val();
             var loc2 = $("#house").val();
             var loc3 = $("#web").val();
+            var loc4 = $("#other").val();
             console.log(school);
             console.log(zip);
             console.log(username);
@@ -154,8 +160,8 @@
                     "blurb":blurb,
                     "loc1":loc1,
                     "loc2":loc2,
-                    "loc3":loc3
-                    
+                    "loc3":loc3,
+                    "loc4":loc4
                 });
             window.location.replace("profile.html?username="+userData);
         }
