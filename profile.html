@@ -226,13 +226,13 @@
                 $("#profileImage").attr('src', currentUser.profilepic);
                 $("#name").text(currentUser.name);
                 $("#school").text(currentUser.school);
-                $("#zip").text("<b>Zipcode:</b> " + currentUser.zipcode);
+                $("#zip").text("Zipcode: " + currentUser.zipcode);
                 $("#age").text("Age: " + currentUser.age);
                 $("#grade").text("Grade: " + currentUser.grade);
                 $("#dropMenu").text("Hi " + currentUser.username + " ");
                 $("#dropMenu").append('<span class="caret" aria-hidden="true"></span>');
                 $("#desc").text(currentUser.blurb);
-                $("preferredLoc").text("Preferred tutoring location: " + currentUser.username);
+                $("prefLoc").text("Preferred tutoring location: " + currentUser.username);
                 $("body").fadeIn(10);
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
