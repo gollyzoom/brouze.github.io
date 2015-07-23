@@ -115,12 +115,14 @@
             console.log(year);
             console.log(grade);
             console.log(teacher);
+            console.log("xox 1");
             var usersRef = ref.child("users")
+            console.log("xox 2");
             var usernameRef = usersRef.child(userData);
             //var basicRef = usernameRef.child("basicInfo");
                 usernameRef.update({
                     "skills":{
-                        "class": username,
+                        "class": category,
                         "zipcode": zip,
                         "grade": grade,
                         "age": age,
