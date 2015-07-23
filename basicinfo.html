@@ -76,21 +76,21 @@
         <div class="form-group">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Library
+                  <input type="checkbox" id="lib"> Library
                 </label>
               </div>
           </div>
           <div class="form-group">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Your Home
+                  <input type="checkbox" id="house"> Student's Home
                 </label>
               </div>
           </div>
           <div class="form-group">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox"> Online
+                  <input type="checkbox" id="web"> Online
                 </label>
               </div>
           </div>
@@ -134,6 +134,9 @@
             var grade = $("#grade").val();
             var age = $("#age").val();
             var blurb = $("#comment").val();
+            var loc1 = $("#lib").val();
+            var loc2 = $("#house").val();
+            var loc3 = $("#web").val();
             console.log(school);
             console.log(zip);
             console.log(username);
@@ -148,7 +151,10 @@
                     "grade": grade,
                     "age": age,
                     "school": school,
-                    "blurb":blurb
+                    "blurb":blurb,
+                    "loc1":loc1,
+                    "loc2":loc2,
+                    "loc3":loc3
                     
                 });
             window.location.replace("profile.html?username="+userData);
