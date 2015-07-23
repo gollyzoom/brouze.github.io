@@ -246,7 +246,8 @@
                 $("#dropMenu").text("Hi " + currentUser.username + "   ");
                 $("#dropMenu").append('<span class="caret" aria-hidden="true"></span>');
                 $("#desc").text(currentUser.blurb);
-                $("prefLoc").text("Preferred tutoring location: " + currentUser.username);
+                //need to fix/update
+                $("prefLoc").text("Tutoring location(s): " + currentUser.loc1 + currentUser.loc2 + currentUser.loc3 + currentUser.loc4);
                 $("body").fadeIn(10);
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
