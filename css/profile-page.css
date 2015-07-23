@@ -5,8 +5,6 @@ body {
     overflow-x: hidden;
     font-weight: 400;
     margin-top: 80px;
-    margin-left: 8vw;
-    margin-right: 8vw;
 }
 
 body,
@@ -208,16 +206,6 @@ img:hover {
     font-size: 3vw;
 }
 
-b {
-    font-weight: 700;
-}
-
-#tutorTable {
-    margin-left: 8vw;
-    margin-right: 8vw;
-    
-}
-
 #bio {
     font-weight: 400;
     margin-left: 8vw;
@@ -286,8 +274,8 @@ td {
     }
     
     .input-group {
-        margin-left: 5vw;
-        margin-right: 5vw;
+        margin-left: 7vw;
+        margin-right: 7vw;
     }
 
 }
