@@ -236,7 +236,7 @@ b {
 }
 
 .table-responsive {
-      margin-left: 8vw;
+    margin-left: 8vw;
     margin-right: 8vw;
     
 }
@@ -268,12 +268,12 @@ td {
 }
 
 #canTutor a {
+    padding-top: 4%;
+    padding-bottom: 4%;
     border-radius: 100%;
     color: darkorange;
     border: 3px solid darkorange;
-
-    
-    
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -288,6 +288,12 @@ td {
         margin-left: 5vw;
         margin-right: 5vw;
     }
+    
+    .table-responsive {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    
+}
 }
 
 .foot {
