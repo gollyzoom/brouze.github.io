@@ -118,6 +118,7 @@
             var usersRef = ref.child("users")
             var usernameRef = usersRef.child(userData);
             //var basicRef = usernameRef.child("basicInfo");
+            console.log("xox 1");
                 usernameRef.update({
                     "skills":{
                         "class": username,
@@ -128,6 +129,7 @@
                         "blurb":blurb
                     }
                 });
+            console.log("xox 2");
             redirect();
         }
         function redirect(){
