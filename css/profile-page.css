@@ -235,6 +235,12 @@ b {
     text-align: left;
 }
 
+.table-responsive {
+      margin-left: 8vw;
+    margin-right: 8vw;
+    
+}
+
 #needsHelp h2 {
     font-size: 2em;
 }
