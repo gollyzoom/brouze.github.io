@@ -194,6 +194,8 @@ padding-top: 40px;
 #gif  img {
   width: 40vw;  
     max-width: 400px;
+    background-color: darkorange;
+    
 }
 
 #email {
