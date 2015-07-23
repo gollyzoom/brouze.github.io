@@ -280,7 +280,11 @@ th, td {
 }
 
 
-
+.input-group{
+    max-width: 85vw;
+    
+    
+}
 
 
 .foot {
