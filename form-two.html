@@ -130,15 +130,13 @@
                           "comment":comment     
                     }
                 });
-            var classRef = usernameRef.child("skills");
-                classRef.update({
-                    category:{
+            var classRef = usernameRef.child("skills").child(category).set({
                          "pay": pay,
                           "grade": grade,
                           "year": year,
                           "teacher": teacher,
                           "comment":comment     
-                    }
+                    
                 });
             redirect();
         }
