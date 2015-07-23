@@ -84,7 +84,7 @@
 <script>
         var ref = new Firebase("https://brouze.firebaseio.com");
         var userData;//data.uid
-        parseQueryString= function(){
+        var parseQueryString = function(){
               var info;
               var queryString = window.location.search;
               queryString = queryString.substring(1);
@@ -122,18 +122,12 @@
             //var basicRef = usernameRef.child("basicInfo");
                 usernameRef.update({
                     "skills":{
-                      "class": category
-                    }
-                });
-            var classRef = usernameRef.child("class");
-            classRef.update({
-                      "category":{
+                          "class": category,
                           "pay": pay,
                           "grade": grade,
                           "year": year,
                           "teacher": teacher,
-                          "comment":comment
-                      }
+                          "comment":comment     
                     }
                 });
             redirect();
