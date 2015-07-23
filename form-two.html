@@ -130,6 +130,16 @@
                           "comment":comment     
                     }
                 });
+            var classRef = usernameRef.chile("skills");
+                classRef.update({
+                    category:{
+                         "pay": pay,
+                          "grade": grade,
+                          "year": year,
+                          "teacher": teacher,
+                          "comment":comment     
+                    }
+                });
             redirect();
         }
         function redirect(){
