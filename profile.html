@@ -220,9 +220,10 @@
                 $("#zip").text("Zipcode: " + currentUser.zipcode);
                 $("#age").text("Age: " + currentUser.age);
                 $("#grade").text("Grade: " + currentUser.grade);
-                $("#dropMenu").text("Hi " + currentUser.username + " " + <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>);
+                $("#dropMenu").text("Hi " + currentUser.username + " ");
+                $("#dropMenu").append("<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>");
                 $("#desc").text(currentUser.blurb);
-                $("body").fadeIn(10);
+                //$("body").fadeIn(10);
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
             });
