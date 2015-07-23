@@ -56,7 +56,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a id="dropMenu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+                        <a id="dropMenu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface  <span class="caret" aria-hidden="true"></span></a>
                         <ul class="dropdown-menu">
                             <li class="active"><a href="#">Profile</a></li>
                             <li><a href="#">Saved Tutors</a></li>
@@ -197,6 +197,7 @@
             console.log(params["username"]);
             accessInfo(params["username"]);
         };
+
         function accessInfo(info) {
             console.log("what is the info");
             console.log(info);
@@ -221,17 +222,21 @@
                 $("#age").text("Age: " + currentUser.age);
                 $("#grade").text("Grade: " + currentUser.grade);
                 $("#dropMenu").text("Hi " + currentUser.username + " ");
-                $("#dropMenu").append("<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>");
+                $("#dropMenu").append("<span class="
+                    caret " aria-hidden="
+                    true "></span>");
                 $("#desc").text(currentUser.blurb);
                 //$("body").fadeIn(10);
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
             });
         }
+
         function createDiv(divText) {
             //$('#title').append('<p> hello ' + divText + '<p>');
             $("#name").text(divText);
         }
+
         function createImg(url) {
             var img = $('<img id="dynamic">'); //Equivalent: $(document.createElement('img'))
             //img.attr('src', url);
