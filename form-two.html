@@ -123,11 +123,17 @@
                 usernameRef.update({
                     "skills":{
                       "class": category,
-                      "pay": pay,
-                      "grade": grade,
-                      "year": year,
-                      "teacher": teacher,
-                      "comment":comment
+                    }
+                });
+            var classRef = usernameRef.child("skills");
+            classRef.update({
+                      "class":{
+                          "pay": pay,
+                          "grade": grade,
+                          "year": year,
+                          "teacher": teacher,
+                          "comment":comment
+                      }
                     }
                 });
             redirect();
