@@ -165,11 +165,13 @@ p.copyright {
 
 #title {
     width: 100%;
-    /*
-    padding-top: 30px;
-    padding-bottom: 40px;
-    */
     background-color: blue;
+    text-align: center;  
+}
+
+#results {
+    width: 100%;
+    background-color: floralwhite;
     text-align: center;  
 }
 
