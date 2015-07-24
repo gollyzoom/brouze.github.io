@@ -1,5 +1,5 @@
 body {
-    display: none;
+    /*display: none;*/
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -203,7 +203,7 @@ img:hover {
 
 #basicInfo h2 {
     font-weight: 400;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 #bio {
@@ -313,9 +313,21 @@ td {
     }
     
     .input-group {
-        margin-left: 7vw;
-        margin-right: 7vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        overflow-x: hidden;
     }
+    
+    #basicInfo h2 {
+    font-weight: 400;
+    font-size: 5vw;
+}
+    
+    #name {
+    font-size: 10vw;
+    font-weight: 700;
+}
+
 
 
 }
