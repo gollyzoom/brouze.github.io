@@ -272,14 +272,15 @@ td {
 
 #canTutorButton{
     text-align: right;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 
   
 }
 
 #canTutorButton a {
-    font-size: 2em;
+    padding: 5px 5px 5px 5px;
+    font-size: 1.5em;
     border-radius: 100%;
     color: darkorange;
     border: 3px solid darkorange;
