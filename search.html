@@ -75,7 +75,40 @@
                     <form class="navbar-form" role="form">
                         <div class="input-group">
                           <div class="form-group">
-                               <input type="text" class="form-control" id="srch-term" placeholder="Search Brouze">
+                               <!--<input type="text" class="form-control" id="srch-term" placeholder="Search Brouze">-->
+                              <select class="form-control" id="subject">
+                              <option></option>
+                              <option>Math</option>
+                              <option>English</option>
+                              <option>History</option>
+                              <option>Science</option>
+                              <option>Pre-Algebra</option>
+                              <option>Algebra</option>
+                              <option>Algebra 2</option>
+                              <option>Geometry</option>
+                              <option>Trigonometry</option>
+                              <option>Precalculus</option>
+                              <option>Calculus</option>
+                              <option>AP Calculus AB</option>
+                              <option>AP Calculus BC</option>
+                              <option>Statistics</option>
+                              <option>Rhetoric</option>
+                              <option>AP English Literature</option>
+                              <option>AP English Language</option>
+                              <option>AP European History</option>
+                              <option>AP United States History</option>
+                              <option>Biology</option>
+                              <option>AP Biology</option>
+                              <option>Chemistry</option>
+                              <option>Chemistry Honors</option>
+                              <option>AP Chemistry</option>
+                              <option>AP Environmental Science</option>
+                              <option>Physics</option>
+                              <option>AP Physics A</option>
+                              <option>AP Physics B</option>
+                              <option>AP Physics C</option>
+                           </select>
+                              
                           </div>
                           <div class="input-group-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Keyword <span class="caret"></span></button>
@@ -252,7 +285,7 @@
     <script>
         var keyWord;
         function getWord(){
-            keyWord = $("#srch-term").val();
+            keyWord = $("#subject").val();
             //console.log(keyWord);
             search(keyWord);
         }
