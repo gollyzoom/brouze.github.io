@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Brouze | Your Saved Tutors</title>
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/profile-page.css" rel="stylesheet">
+
+
+
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body onload="parseQueryString()">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="navbar-brand">Study That Shit</p>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <form class="navbar-form" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search Tutors" name="srch-term" id="srch-term">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a id="dropMenu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Buttface  <span class="caret" aria-hidden="true"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="#">Profile</a></li>
+                            <li><a href="#">Saved Tutors</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a onclick="signOut()">Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+
+
+    <!--Content-->
+    <div id="title" class="container">
+        
+    </div>
+
+    <div class="foot">
+        <h5>Copyright 2015 - YAAAS Labs</h5>
+    </div>
+
+
+
+    <script>
+        var data;
+        var profileOwner;
+        /*function parseQueryString(){
+            data = GetUrlValue("username_a");
+            console.log(data);
+            profileOwner = GetUrlValue("username_b");
+            console.log(profileOwner);
+            accessInfo(data);
+                               
+        }*/
+        var parseQueryString = function() {
+            var queryString = window.location.search;
+            queryString = queryString.substring(1);
+            var params = {},
+                queries, temp, i, l;
+            // Split into key/value pairs
+            queries = queryString.split("&");
+            // Convert the array of strings into an object
+            for (i = 0, l = queries.length; i < l; i++) {
+                temp = queries[i].split('=');
+                params[temp[0]] = temp[1];
+            }
+            console.log("dude");
+            data = params["username"];
+            console.log(params["username"]);
+            accessInfo(params["username"]);
+            console.log("page Owner"+params["pageOwner"]);
+        };
+        function GetUrlValue(VarSearch){
+            var SearchString = window.location.search.substring(1);
+            var VariableArray = SearchString.split('&');
+            for(var i = 0; i < VariableArray.length; i++){
+                var KeyValuePair = VariableArray[i].split('=');
+                if(KeyValuePair[0] == VarSearch){
+                    return KeyValuePair[1];
+                }
+            }
+        }
+        function accessInfo(info) {
+            console.log("what is the info");
+            console.log(info);
+            // Get a reference to our users
+            var ref = new Firebase("https://brouze.firebaseio.com/users/" + info + "/basicInfo");
+            ref.on("value", function(snapshot) {
+                var currentUser = snapshot.val();
+                console.log(currentUser);
+                console.log(currentUser.username);
+                console.log(currentUser.name);
+                //createDiv(currentUser.name);
+                //createImg(currentUser.profilepic);
+                //createDiv(currentUser.name);
+                //document.write("hello " + currentUser.username);'
+                //createH1(currentUser.name);
+                // name school zip age grade
+                //time to decorate!
+                $("#profileImage").attr('src', currentUser.profilepic);
+                $("#name").text(currentUser.name);
+                $("#school").text(currentUser.school);
+                $("#zip").text("Zipcode: " + currentUser.zipcode);
+                $("#age").text("Age: " + currentUser.age);
+                $("#grade").text("Grade: " + currentUser.grade);
+                $("#dropMenu").text("Hello " + currentUser.username + "   ");
+                $("#dropMenu").append('<span class="caret" aria-hidden="true"></span>');
+                $("#desc").text(currentUser.blurb);
+                //need to fix/update
+                $("prefLoc").text("Tutoring location(s): " + currentUser.loc1 + currentUser.loc2 + currentUser.loc3 + currentUser.loc4);
+                addRow();
+                addRowTwo();
+                $("body").fadeIn(10);
+            }, function(errorObject) {
+                console.log("The read failed: " + errorObject.code);
+            });
+        }
+        function createDiv(divText) {
+            //$('#title').append('<p> hello ' + divText + '<p>');
+            $("#name").text(divText);
+        }
+        function createImg(url) {
+            var img = $('<img id="dynamic">'); //Equivalent: $(document.createElement('img'))
+            //img.attr('src', url);
+            //img.attr('shape',"circle");
+            img.appendTo('body');
+            $('body').append('<h1> hello ' + divText + '<p>');
+        }
+        function redirect() {
+            console.log("xox redirect");
+            window.location.replace("form-two.html?username=" + data);
+        }
+        function redirectTwo() {
+            console.log("xox redirect");
+            window.location.replace("form-three.html?username=" + data);
+        }
+        function addRow(){
+            var i;
+            console.log("Attempting to append");
+            //$('#canTutorTable tr:last').after('<tr><td>hello</td><td>world</td></tr>');
+            var skillsRef = new Firebase("https://brouze.firebaseio.com/users/"+ data + "/skills");//we are looking at the skills of the specific user
+            skillsRef.once("value", function(snapshot) {
+              // The callback function will get once for each class
+              snapshot.forEach(function(childSnapshot) {
+                // key will be the name of the class they are taking 
+                var key = childSnapshot.key();
+                // childData will be the actual contents of the child
+                var childData = childSnapshot.val();
+                //var category= childData.category;
+                var price = childData.pay;
+                var teacher = childData.teacher;
+                var yearTaken = childData.year;
+                var comments = childData.comment;
+                var grade = childData.grade;
+                var AP = childData.AP;
+                $('#canTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+yearTaken+'</td><td>'+grade+'</td><td>'+AP+'</td><td>$'+price+'</td><td>'+comments+'</td></tr>');
+              });
+            });
+        }
+        function addRowTwo(){
+            console.log("Attempting to append");
+            //$('#canTutorTable tr:last').after('<tr><td>hello</td><td>world</td></tr>');
+            var weakRef = new Firebase("https://brouze.firebaseio.com/users/"+ data + "/weaknesses");//we are looking at the skills of the specific user
+            weakRef.once("value", function(snapshot) {
+              snapshot.forEach(function(childSnapshot) {
+                var key = childSnapshot.key();
+                var childData = childSnapshot.val();
+                var teacher = childData.teacher;
+                var comments = childData.comment;
+                var grade = childData.grade;
+                console.log(key);
+                console.log(teacher);
+                console.log(comments);
+                console.log(grade);
+                //console.log(key);
+                $('#cantTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+grade+'</td><td>'+comments+'</td></tr>');
+              });
+            });
+        }
+        function signOut(){
+            var outRef = new Firebase("https://brouze.firebaseio.com");
+            outRef.unauth();
+            window.location.replace("index.html");
+            
+        }
+    </script>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
