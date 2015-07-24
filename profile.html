@@ -304,7 +304,8 @@
                 var yearTaken = childData.year;
                 var comments = childData.comment;
                 var grade = childData.grade;
-                $('#canTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+yearTaken+'</td><td>'+grade+'</td><td>'+price+'</td><td>'+comments+'</td></tr>');
+                var AP = childData.AP;
+                $('#canTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+yearTaken+'</td><td>'+grade+'</td><td>'+AP+'</td><td>$'+price+'</td><td>'+comments+'</td></tr>');
               });
             });
         }
