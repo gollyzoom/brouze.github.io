@@ -70,7 +70,7 @@
                             <li class="active"><a href="#">Profile</a></li>
                             <li><a href="#">Saved Tutors</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Sign Out</a></li>
+                            <li><a onclick="signOut()">Sign Out</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -215,6 +215,7 @@
             data = params["username"];
             console.log(params["username"]);
             accessInfo(params["username"]);
+            console.log("page Owner"+params["pageOwner"]);
         };
         function GetUrlValue(VarSearch){
             var SearchString = window.location.search.substring(1);
@@ -326,6 +327,12 @@
                 $('#cantTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+grade+'</td><td>'+comments+'</td></tr>');
               });
             });
+        }
+        function signOut(){
+            var outRef = new Firebase("https://brouze.firebaseio.com");
+            outRef.unauth();
+            window.location.replace("index.html");
+            
         }
     </script>
 
