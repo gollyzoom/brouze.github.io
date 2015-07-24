@@ -268,7 +268,10 @@ td {
     text-align: left;
     
 }
-#canTutor a {
+
+
+#canTutorButton{
+    text-align: right;
     padding-top: 4%;
     padding-bottom: 4%;
     border-radius: 100%;
