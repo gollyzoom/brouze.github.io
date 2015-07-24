@@ -101,68 +101,69 @@
                 <p>
                     <hr>
         </div>
+        <div class="container" id="skills">
+            <div class="row" id="canTutor">
+                <div id="canTutorHeader">
+                    <div class="col-md-6">
+                        <h2>Can Tutor:</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pull-right">
+                            <a onclick="redirect()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                        </div>
 
-        <div class="row" id="canTutor">
-            <div id="canTutorHeader">
-                <div class="col-md-6">
-                    <h2>Can Tutor:</h2>
-                </div>
-                <div class="col-md-6">
-                    <div class="pull-right">
-                        <a onclick="redirect()" ><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                     </div>
 
+
                 </div>
+            </div>
 
-
+            <div id="tutorTable" class="table-responsive">
+                <table class="table" id="canTutorTable">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Teacher</th>
+                            <th>Year Taken</th>
+                            <th>Grade/Score</th>
+                            <th>AP/SAT/ACT</th>
+                            <th>$/hour</th>
+                            <th>Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AP Biology</td>
+                            <td>Lenz</td>
+                            <td>2014-15</td>
+                            <td>A (both semesters)</td>
+                            <td>AP: 5, SAT: 790</td>
+                            <td>$50</td>
+                            <td>I helped my friends in this class all year long. Biology comes easily to me, and I am used to explaining concepts to many people.</td>
+                        </tr>
+                        <tr>
+                            <td>APUSH</td>
+                            <td>Anzalone</td>
+                            <td>2014-15</td>
+                            <td>A- (both semesters)</td>
+                            <td>AP: 5, SAT: 800</td>
+                            <td>$60</td>
+                            <td>Over the course of the year, I became close with Mrs. Anzalone and know exactly what she wants out of homework and assignments. My homework grade was an A+.</td>
+                        </tr>
+                        <tr>
+                            <td>AP Calculus BC</td>
+                            <td>Warmuth</td>
+                            <td>2014-15</td>
+                            <td>A+ (Sem 1), A (Sem 2)</td>
+                            <td>AP: 5, SAT: 800</td>
+                            <td>$70</td>
+                            <td>I have had previous experience tutoring math to kids at camps and tutoring services.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
-        <div id="tutorTable" class="table-responsive">
-            <table class="table" id="canTutorTable">
-                <thead>
-                    <tr>
-                        <th>Class</th>
-                        <th>Teacher</th>
-                        <th>Year Taken</th>
-                        <th>Grade/Score</th>
-                        <th>AP/SAT/ACT</th>
-                        <th>$/hour</th>
-                        <th>Comments</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>AP Biology</td>
-                        <td>Lenz</td>
-                        <td>2014-15</td>
-                        <td>A (both semesters)</td>
-                        <td>AP: 5, SAT: 790</td>
-                        <td>$50</td>
-                        <td>I helped my friends in this class all year long. Biology comes easily to me, and I am used to explaining concepts to many people.</td>
-                    </tr>
-                    <tr>
-                        <td>APUSH</td>
-                        <td>Anzalone</td>
-                        <td>2014-15</td>
-                        <td>A- (both semesters)</td>
-                        <td>AP: 5, SAT: 800</td>
-                        <td>$60</td>
-                        <td>Over the course of the year, I became close with Mrs. Anzalone and know exactly what she wants out of homework and assignments. My homework grade was an A+.</td>
-                    </tr>
-                    <tr>
-                        <td>AP Calculus BC</td>
-                        <td>Warmuth</td>
-                        <td>2014-15</td>
-                        <td>A+ (Sem 1), A (Sem 2)</td>
-                        <td>AP: 5, SAT: 800</td>
-                        <td>$70</td>
-                        <td>I have had previous experience tutoring math to kids at camps and tutoring services.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
 
 
 
@@ -204,7 +205,7 @@
     <script>
         var data;
         var parseQueryString = function() {
-            
+
             var queryString = window.location.search;
             queryString = queryString.substring(1);
             var params = {},
@@ -268,9 +269,10 @@
             img.appendTo('body');
             $('body').append('<h1> hello ' + divText + '<p>');
         }
-        function redirect(){
+
+        function redirect() {
             console.log("xox redirect");
-             window.location.replace("form-two.html?username="+data);
+            window.location.replace("form-two.html?username=" + data);
         }
     </script>
 
