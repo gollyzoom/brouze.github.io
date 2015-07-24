@@ -266,8 +266,21 @@ td {
 
 #tutorTable {
     margin-left: 8vw;
-    margin-right: 8vw;
-    
+    margin-right: 8vw;  
+}
+
+.foot {
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+    color: dimgray;
+    border-top: 1px solid lightgray;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.7);
+    overflow-x: hidden;
 }
 
 
@@ -284,19 +297,11 @@ td {
         margin-left: 7vw;
         margin-right: 7vw;
     }
+    
+    #tutorTable {
+    margin-left: 8vw;
+    margin-right: 8vw;  
+}
 
 }
 
-.foot {
-    width: 100%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    text-align: center;
-    color: dimgray;
-    border-top: 1px solid lightgray;
-}
-
-.navbar {
-    background: rgba(255, 255, 255, 0.7);
-    overflow-x: hidden;
-}
