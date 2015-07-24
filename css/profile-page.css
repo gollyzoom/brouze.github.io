@@ -263,12 +263,7 @@ td {
     border: 3px solid darkorange;
   
 }
-.table {
-    margin-left: 8vw;
-    margin-right: 8vw;
-    
-    
-}
+
 
 @media only screen and (max-width: 768px) {
     #profileImage {
@@ -297,5 +292,5 @@ td {
 
 .navbar {
     background: rgba(255, 255, 255, 0.7);
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
