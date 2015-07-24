@@ -33,6 +33,14 @@
 </head>
 
 <body onload="parseQueryString()">
+    
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="1" data-step="1">1</div>
+        <div class="tab-pane" id="2" data-step="2">2</div>
+        <div class="tab-pane" id="3" data-step="3">3</div>
+        <div class="tab-pane" id="4" data-step="4">4</div>
+    </div>
 
 <div class="container">
   <h2>Hello! Welcome to Brouze</h2>
@@ -108,6 +116,9 @@
     </div>
     <div class="form-group"> 
       <button type="button" class="btn btn-default" onclick="accessInfo()">Submit</button>
+    </div>
+    <div class="form-group"> 
+      <button type="button" class="btn btn-default" onclick="currentStep()">Cancel</button>
     </div>
   </form>
   
@@ -185,6 +196,21 @@
                     
                 });*/
             window.location.replace("profile.html?username="+userData);
+        }
+        
+        //for back button
+        $('.step-back, .step-next').on('shown.bs.tab', function (e) {
+          currentStep()
+        })
+        
+        
+        function currentStep() {    
+          var currentVal = $('.tab-pane.active').attr("data-step");
+          currentVal = parseInt(currentVal)    
+        
+          var prev = currentVal - 1;
+        
+          $('.step-back').attr('href','#' + prev);
         }
         
 </script>
