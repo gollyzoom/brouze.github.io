@@ -264,6 +264,12 @@ td {
   
 }
 
+#tutorTable {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    
+}
+
 
 @media only screen and (max-width: 768px) {
     #profileImage {
