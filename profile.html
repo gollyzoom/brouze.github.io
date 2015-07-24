@@ -148,7 +148,7 @@
                     </div>
                     <div class="col-xs-6 col-md-6" id="canTutorButton">
                       
-                            <a onclick="redirect()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                            <a onclick="redirectTwo()"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 
                     </div>
 
@@ -157,7 +157,7 @@
             </div>
             
            <div id="tutorTable" class="table-responsive">
-                <table class="table" id="canTutorTable">
+                <table class="table" id="cantTutorTable">
                     <thead>
                         <tr>
                             <th>Class</th>
@@ -168,11 +168,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>AP English</td>
-                            <td>Lenz</td>
-
-                        </tr>
 
                     </tbody>
                 </table>
@@ -240,6 +235,7 @@
                 //need to fix/update
                 $("prefLoc").text("Tutoring location(s): " + currentUser.loc1 + currentUser.loc2 + currentUser.loc3 + currentUser.loc4);
                 addRow();
+                addRowTwo();
                 $("body").fadeIn(10);
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
@@ -263,6 +259,10 @@
             console.log("xox redirect");
             window.location.replace("form-two.html?username=" + data);
         }
+        function redirectTwo() {
+            console.log("xox redirect");
+            window.location.replace("form-three.html?username=" + data);
+        }
         function addRow(){
             var i;
             console.log("Attempting to append");
@@ -283,6 +283,26 @@
                 var grade = childData.grade;
                 var AP = childData.AP;
                 $('#canTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+yearTaken+'</td><td>'+grade+'</td><td>'+AP+'</td><td>$'+price+'</td><td>'+comments+'</td></tr>');
+              });
+            });
+        }
+        function addRowTwo(){
+            console.log("Attempting to append");
+            //$('#canTutorTable tr:last').after('<tr><td>hello</td><td>world</td></tr>');
+            var weakRef = new Firebase("https://brouze.firebaseio.com/users/"+ data + "/weaknesses");//we are looking at the skills of the specific user
+            weakRef.once("value", function(snapshot) {
+              snapshot.forEach(function(childSnapshot) {
+                var key = childSnapshot.key();
+                var childData = childSnapshot.val();
+                var teacher = childData.teacher;
+                var comments = childData.comment;
+                var grade = childData.grade;
+                console.log(key);
+                console.log(teacher);
+                console.log(comments);
+                console.log(grade);
+                //console.log(key);
+                $('#cantTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+grade+'</td><td>'+comments+'</td></tr>');
               });
             });
         }
