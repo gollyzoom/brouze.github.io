@@ -238,6 +238,12 @@ th {
     font-size: 1.3em;
 }
 
+table {
+    text-align: left;
+    
+    
+}
+
 tr td {
     vertical-align: middle;
 }
@@ -251,6 +257,10 @@ td {
     font-size: 2.5vw;
 }
 
+#canTutor {
+    text-align: left;
+    
+}
 #canTutor a {
     padding-top: 4%;
     padding-bottom: 4%;
