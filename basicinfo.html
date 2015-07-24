@@ -18,6 +18,7 @@
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
+   
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -30,111 +31,129 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        body {
+            background-image: url(../img/bird-mountain.jpg);
+            margin-left: 8vw;
+            margin-right: 8vw;
+            width: auto;
+        }
+        
+         #bg{
+            margin-bottom: 7vw;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 2%
+        }
+    </style>
+
 </head>
 
 <body onload="parseQueryString()">
 
-<div class="container">
-  <h2>Hello! Welcome to Brouze</h2>
-  <p>To set up your profile, fill in the form below. You can always come back and edit this later.</p>
-  <form role="form" onsubmit="accessInfo()">
-  <form role="form">
-    <div class="form-group">
-      <label for="usr">Username:</label>
-      <input type="text" maxlength="18" class="form-control" id="usr" placeholder="Enter screenname">
-    </div>
-    <div class="form-group">
-      <label for="school">School:</label>
-      <input type="text" maxlength="45" class="form-control" id="school" placeholder="Enter your school">
-    </div>
-    <div class="form-group">
-      <label for="zipcode">Zipcode:</label>
-      <input type="text" maxlength="5" class="form-control" id="zipcode" placeholder="Enter your zipcode">
-    </div>
-    <div class="form-group">
-       <label for="grade">Select grade:</label>
-       <select class="form-control" id="grade">
-          <option></option>
-          <option>freshman</option>
-          <option>sophomore</option>
-          <option>junior</option>
-          <option>senior</option>
-       </select>
-    </div>
-    <div class="form-group">
-       <label for="age">Select age:</label>
-       <select class="form-control" id="age">
-          <option></option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-       </select>
-    </div>
-    <label>Tutoring Location:
-        <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" id="lib"> Library
+    <div id="bg" class="container">
+        <h2>Hello! Welcome to Brouze</h2>
+        <p>To set up your profile, fill in the form below. You can always come back and edit this later.</p>
+        <form role="form" onsubmit="accessInfo()">
+            <form role="form">
+                <div class="form-group">
+                    <label for="usr">Username:</label>
+                    <input type="text" maxlength="18" class="form-control" id="usr" placeholder="Enter screenname">
+                </div>
+                <div class="form-group">
+                    <label for="school">School:</label>
+                    <input type="text" maxlength="45" class="form-control" id="school" placeholder="Enter your school">
+                </div>
+                <div class="form-group">
+                    <label for="zipcode">Zipcode:</label>
+                    <input type="text" maxlength="5" class="form-control" id="zipcode" placeholder="Enter your zipcode">
+                </div>
+                <div class="form-group">
+                    <label for="grade">Select grade:</label>
+                    <select class="form-control" id="grade">
+                        <option></option>
+                        <option>freshman</option>
+                        <option>sophomore</option>
+                        <option>junior</option>
+                        <option>senior</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Select age:</label>
+                    <select class="form-control" id="age">
+                        <option></option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                    </select>
+                </div>
+                <label>Tutoring Location:
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="lib"> Library
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="house"> Student's Home
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="web"> Online
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="text" maxlength="40" class="form-control" id="other" placeholder="Other location">
+                        </label>
+                    </div>
                 </label>
-              </div>
-          </div>
-          <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" id="house"> Student's Home
-                </label>
-              </div>
-          </div>
-          <div class="form-group">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" id="web"> Online
-                </label>
-              </div>
-          </div>
-          <div class="form-group">
-              <label>
-                  <input type="text" maxlength="40" class="form-control" id="other" placeholder="Other location">
-              </label>
-          </div>
-      </label>
-    <div class="form-group">
-      <label for="comment">Bio:</label>
-      <textarea class="form-control" rows="5" id="comment" placeholder="A summary of your education will help people get to know you."></textarea>
+                <div class="form-group">
+                    <label for="comment">Bio:</label>
+                    <textarea class="form-control" rows="5" id="comment" placeholder="A summary of your education will help people get to know you."></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" onclick="accessInfo()">Submit</button>
+                    <label> </label> <a class="btn btn-default" href="index.html">Cancel</a>
+                </div>
+            </form>
+
     </div>
-    <div class="form-group"> 
-      <button type="button" class="btn btn-primary"  onclick="accessInfo()">Submit</button>  <label>   </label>  <a class="btn btn-default" href="index.html">Cancel</a>
-    </div>
-  </form>
-  
-</div>
-<script>
+    <script>
         var ref = new Firebase("https://brouze.firebaseio.com");
-        var userData;//data.uid
-        var parseQueryString = function( ) {
-              var info;
-              var queryString = window.location.search;
-              queryString = queryString.substring(1);
-              var params = {}, queries, temp, i, l;
+        var userData; //data.uid
+        var parseQueryString = function() {
+            var info;
+            var queryString = window.location.search;
+            queryString = queryString.substring(1);
+            var params = {},
+                queries, temp, i, l;
 
-                // Split into key/value pairs
-                queries = queryString.split("&");
+            // Split into key/value pairs
+            queries = queryString.split("&");
 
-                // Convert the array of strings into an object
-                for ( i = 0, l = queries.length; i < l; i++ ) {
-                    temp = queries[i].split('=');
-                    params[temp[0]] = temp[1];
-                }
-                console.log("dude");
-                console.log(params["username"]);
-                userData = params["username"];
-                //accessInfo(params["username"]);
-        };    
-        function accessInfo(){
+            // Convert the array of strings into an object
+            for (i = 0, l = queries.length; i < l; i++) {
+                temp = queries[i].split('=');
+                params[temp[0]] = temp[1];
+            }
+            console.log("dude");
+            console.log(params["username"]);
+            userData = params["username"];
+            //accessInfo(params["username"]);
+        };
+
+        function accessInfo() {
             var school = $("#school").val();
             var zip = $("#zipcode").val();
             var username = $("#usr").val();
@@ -153,18 +172,18 @@
             var usersRef = ref.child("users");
             var usernameRef = usersRef.child(userData);
             var basicRef = usernameRef.child("basicInfo");
-                basicRef.update({
-                    "username": username,
-                    "zipcode": zip,
-                    "grade": grade,
-                    "age": age,
-                    "school": school,
-                    "blurb":blurb,
-                    "loc1":loc1,
-                    "loc2":loc2,
-                    "loc3":loc3,
-                    "loc4":loc4
-                });
+            basicRef.update({
+                "username": username,
+                "zipcode": zip,
+                "grade": grade,
+                "age": age,
+                "school": school,
+                "blurb": blurb,
+                "loc1": loc1,
+                "loc2": loc2,
+                "loc3": loc3,
+                "loc4": loc4
+            });
             /*var skillsRef = usernameRef.child("skills");
                 skillsRef.update({
                     "math":{
@@ -184,9 +203,9 @@
                     }
                     
                 });*/
-            window.location.replace("profile.html?username="+userData);
+            window.location.replace("profile.html?username=" + userData);
         }
-        
-</script>
+    </script>
 </body>
+
 </html>

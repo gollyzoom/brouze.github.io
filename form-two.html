@@ -18,7 +18,20 @@
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
-
+    <style>
+        body {
+            background-image: url(../img/white-pines.jpg);
+            margin-left: 8vw;
+            margin-right: 8vw;
+           
+           
+            width: auto;
+        }
+        
+        #bg{
+            margin-bottom: 60vw;
+        }
+    </style>
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
@@ -34,97 +47,99 @@
 
 <body onload="parseQueryString()">
 
-<div class="container">
-  <h2>Hello</h2>
-  <p>To add a skill, fill in the form below.</p>
-  <form role="form" onsubmit="accessInfo()">
-    <div class="form-group">
-      <label for="year">Year taken:</label>
-      <input type="text" maxlength="18" class="form-control" id="year" placeholder="Enter year">
+    <div id="bg" class="container">
+        <h2>Hello</h2>
+        <p>To add a skill, fill in the form below.</p>
+        <form role="form" onsubmit="accessInfo()">
+            <div class="form-group">
+                <label for="year">Year taken:</label>
+                <input type="text" maxlength="18" class="form-control" id="year" placeholder="Enter year">
+            </div>
+            <div class="form-group">
+                <label for="pay">Charge per hour(optional):</label>
+                <input type="text" maxlength="45" class="form-control" id="pay" placeholder="Enter your $/hour">
+            </div>
+            <div class="form-group">
+                <label for="teacher">Teacher:</label>
+                <input type="text" maxlength="18" class="form-control" id="teacher" placeholder="Enter your teacher's name">
+            </div>
+            <div class="form-group">
+                <label for="grade">Grade in class:</label>
+                <select class="form-control" id="grade">
+                    <option></option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category">Select class:</label>
+                <select class="form-control" id="category">
+                    <option></option>
+                    <option>AB Calculus</option>
+                    <option>BC Calculus</option>
+                    <option>AP US History</option>
+                    <option>AP Literature</option>
+                    <option>AP Biology</option>
+                    <option>Advanced Chemistry</option>
+                    <option>Spanish</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="APscore">AP score:</label>
+                <select class="form-control" id="APscore">
+                    <option>N/A</option>
+                    <option>5</option>
+                    <option>4</option>
+                    <option>3</option>
+                    <option>2</option>
+                    <option>1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="SATscore">SAT score:</label>
+                <input type="text" maxlength="18" class="form-control" id="SATscore" placeholder="Optional">
+            </div>
+            <div class="form-group">
+                <label for="ACTscore">ACT score:</label>
+                <input type="text" maxlength="18" class="form-control" id="ACTscore" placeholder="Optional">
+            </div>
+            <div class="form-group">
+                <label for="comment">Comments (optional):</label>
+                <textarea class="form-control" rows="5" id="comment" placeholder="A summary of your experience with this class"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-default" onclick="accessInfo()">Submit</button>
+            </div>
+        </form>
+
     </div>
-    <div class="form-group">
-      <label for="pay">Charge per hour(optional):</label>
-      <input type="text" maxlength="45" class="form-control" id="pay" placeholder="Enter your $/hour">
-    </div>
-    <div class="form-group">
-      <label for="teacher">Teacher:</label>
-      <input type="text" maxlength="18" class="form-control" id="teacher" placeholder="Enter your teacher's name">
-    </div>
-    <div class="form-group">
-       <label for="grade">Grade in class:</label>
-       <select class="form-control" id="grade">
-          <option></option>
-          <option>A</option>
-          <option>B</option>
-          <option>C</option>
-          <option>D</option>
-       </select>
-    </div>
-    <div class="form-group">
-       <label for="category">Select class:</label>
-       <select class="form-control" id="category">
-          <option></option>
-          <option>AB Calculus</option>
-          <option>BC Calculus</option>
-          <option>AP US History</option>
-          <option>AP Literature</option>
-          <option>AP Biology</option>
-          <option>Advanced Chemistry</option>
-          <option>Spanish</option>
-       </select>
-    </div>
-    <div class="form-group">
-       <label for="APscore">AP score:</label>
-       <select class="form-control" id="APscore">
-          <option>N/A</option>
-          <option>5</option>
-          <option>4</option>
-          <option>3</option>
-          <option>2</option>
-          <option>1</option>
-       </select>
-    </div>
-    <div class="form-group">
-      <label for="SATscore">SAT score:</label>
-      <input type="text" maxlength="18" class="form-control" id="SATscore" placeholder="Optional">
-    </div>
-    <div class="form-group">
-      <label for="ACTscore">ACT score:</label>
-      <input type="text" maxlength="18" class="form-control" id="ACTscore" placeholder="Optional">
-    </div>
-    <div class="form-group">
-      <label for="comment">Comments (optional):</label>
-      <textarea class="form-control" rows="5" id="comment" placeholder="A summary of your experience with this class"></textarea>
-    </div>
-    <div class="form-group"> 
-      <button type="button" class="btn btn-default" onclick="accessInfo()">Submit</button>
-    </div>
-  </form>
-  
-</div>
-<script>
+    <script>
         var ref = new Firebase("https://brouze.firebaseio.com");
-        var userData;//data.uid
-        var parseQueryString = function(){
-              var info;
-              var queryString = window.location.search;
-              queryString = queryString.substring(1);
-              var params = {}, queries, temp, i, l;
+        var userData; //data.uid
+        var parseQueryString = function() {
+            var info;
+            var queryString = window.location.search;
+            queryString = queryString.substring(1);
+            var params = {},
+                queries, temp, i, l;
 
-                // Split into key/value pairs
-                queries = queryString.split("&");
+            // Split into key/value pairs
+            queries = queryString.split("&");
 
-                // Convert the array of strings into an object
-                for ( i = 0, l = queries.length; i < l; i++ ) {
-                    temp = queries[i].split('=');
-                    params[temp[0]] = temp[1];
-                }
-                console.log("dude");
-                console.log(params["username"]);
-                userData = params["username"];
-                //accessInfo(params["username"]);
-        };     
-        function accessInfo(){
+            // Convert the array of strings into an object
+            for (i = 0, l = queries.length; i < l; i++) {
+                temp = queries[i].split('=');
+                params[temp[0]] = temp[1];
+            }
+            console.log("dude");
+            console.log(params["username"]);
+            userData = params["username"];
+            //accessInfo(params["username"]);
+        };
+
+        function accessInfo() {
             var category = $("#category").val();
             var pay = $("#pay").val();
             var year = $("#year").val();
@@ -142,26 +157,26 @@
             console.log("xox 1");
             var usersRef = ref.child("users")
             console.log("xox 2");
-            
+
             var usernameRef = usersRef.child(userData);
             //var basicRef = usernameRef.child("basicInfo");
-                /*usernameRef.update({
-                    "skills":{  
-                    }
-                });*/
+            /*usernameRef.update({
+                "skills":{  
+                }
+            });*/
             var newRef = new Firebase("https://brouze.firebaseio.com/users/" + userData);
             //var classRef = usernameRef.child("skills");
             newRef.child("skills").child(category).set({
-                              pay: pay,
-                              grade: grade,
-                              year: year,
-                              teacher: teacher,
-                              comment:comment,  
-                              AP:AP,
-                              SAT:SAT,
-                              ACT:ACT
-                });
-            
+                pay: pay,
+                grade: grade,
+                year: year,
+                teacher: teacher,
+                comment: comment,
+                AP: AP,
+                SAT: SAT,
+                ACT: ACT
+            });
+
             /*ref.child("users").child(userId).set({
                 basicInfo:{
                     provider: dataProvider,
@@ -202,10 +217,11 @@
             //classRef.child(temp).set(category);
             redirect();
         }
-        function redirect(){
-             window.location.replace("profile.html?username="+userData);
+
+        function redirect() {
+            window.location.replace("profile.html?username=" + userData);
         }
-      
-</script>
+    </script>
 </body>
+
 </html>
