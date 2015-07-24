@@ -29,12 +29,27 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <style>
+        body {
+            background-image: url(../img/fern.jpg);
+            margin-left: 8vw;
+            margin-right: 8vw;
+            width: auto;
+        }
+        
+         #bg{
+            margin-bottom: 7vw;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 2%
+        }
+    </style>
 
 </head>
 
 <body onload="parseQueryString()">
 
-<div class="container">
+<div id="bg" class="container">
   <h2>Hello</h2>
   <p>To add a area that you need tutoring in, fill in the form below.</p>
   <form role="form" onsubmit="accessInfo()">
