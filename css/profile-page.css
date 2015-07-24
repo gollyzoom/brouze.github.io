@@ -215,11 +215,7 @@ img:hover {
     padding-top: 5vw;
 }
 
-#canTutor {
-    margin-left: 8vw;
-    margin-right: 8vw;
-    text-align: left;
-}
+
 
 #canTutor h2 {
     font-size: 2em;
@@ -264,10 +260,6 @@ td {
   
 }
 
-#skills {
-    margin-left: 8vw;
-    margin-right: 8vw;  
-}
 
 .foot {
     width: 100%;
