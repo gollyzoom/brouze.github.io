@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
     <title>Brouze | Search Tutors</title>
 
@@ -69,9 +72,11 @@
                       </div>
                             
                     </form>-->
-                    <form class="navbar-form" role="search">
+                    <form class="navbar-form" role="form">
                         <div class="input-group">
-                          <input type="text" placeholder="Search Brouze" class="form-control" name="srch-term" id="srch-term" aria-label="...">
+                          <div class="form-group">
+                                <input type="text" class="form-control" id="srch-term" placeholder="Search Brouze">
+                          </div>
                           <div class="input-group-btn">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Keyword <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right">
@@ -80,6 +85,7 @@
                             </ul>
                           </div><!-- /btn-group -->
                         </div><!-- /input-group -->
+                        <button class="btn btn-default" type="button" onclick="getWord()"><i class="glyphicon glyphicon-search"></i></button>
                     </form>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -233,7 +239,40 @@
     <div class="foot">
         <h5>Copyright 2015 - YAAAS Labs</h5>
     </div>
-    
+    <script>
+        var keyWord;
+        function getWord(){
+            keyWord = $("#srch-term").val();
+            //console.log(keyWord);
+            search(keyWord);
+        }
+       $('#srch-term').bind('keypress', function(e) {
+            if(e.keyCode==13){
+                getWord();
+                // Enter pressed... do anything here...
+            }
+        });
+       function search(searchVal){
+            var nameRef = new Firebase("https://brouze.firebaseio.com/users");
+            nameRef.once("value", function(snapshot) {
+                snapshot.forEach(function(childSnapshot) {
+                    var key = childSnapshot.key();
+                    var childData = childSnapshot.val();
+                    var username = childData.basicInfo.username;
+                    var name = childData.basicInfo.name;
+                    //var childRef = new Firebase("https://brouze.firebaseio.com/users/" + key);
+                    //var username = childRef.username
+                    //console.log(name);
+                    //console.log(username);
+                    //console.log(key);
+                    //console.log(searchVal);
+                    if(username == searchVal){
+                        console.log(name);
+                    }
+              });
+            });
+       }
+    </script>
     
     
     <!-- jQuery -->
