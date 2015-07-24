@@ -257,6 +257,13 @@ td {
     font-size: 2.5vw;
 }
 
+
+#skills {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    
+    
+}
 #canTutor {
     text-align: left;
     
@@ -282,7 +289,6 @@ td {
 
 .navbar {
     background: rgba(255, 255, 255, 0.7);
-    overflow-x: hidden;
 }
 
 
