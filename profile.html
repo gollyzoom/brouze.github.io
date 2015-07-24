@@ -245,6 +245,7 @@
                 $("#desc").text(currentUser.blurb);
                 //need to fix/update
                 $("prefLoc").text("Tutoring location(s): " + currentUser.loc1 + currentUser.loc2 + currentUser.loc3 + currentUser.loc4);
+                addRow();
                 $("body").fadeIn(10);
             }, function(errorObject) {
                 console.log("The read failed: " + errorObject.code);
@@ -267,6 +268,28 @@
         function redirect() {
             console.log("xox redirect");
             window.location.replace("form-two.html?username=" + data);
+        }
+        function addRow(){
+            var i;
+            console.log("Attempting to append");
+            //$('#canTutorTable tr:last').after('<tr><td>hello</td><td>world</td></tr>');
+            var skillsRef = new Firebase("https://brouze.firebaseio.com/users/"+ data + "/skills");//we are looking at the skills of the specific user
+            skillsRef.once("value", function(snapshot) {
+              // The callback function will get once for each class
+              snapshot.forEach(function(childSnapshot) {
+                // key will be the name of the class they are taking 
+                var key = childSnapshot.key();
+                // childData will be the actual contents of the child
+                var childData = childSnapshot.val();
+                //var category= childData.category;
+                var price = childData.pay;
+                var teacher = childData.teacher;
+                var yearTaken = childData.year;
+                var comments = childData.comment;
+                var grade = childData.grade;
+                $('#canTutorTable tr:last').after('<tr><td>'+key+'</td><td>'+teacher+'</td><td>'+yearTaken+'</td><td>'+grade+'</td><td>'+price+'</td><td>'+comments+'</td></tr>');
+              });
+            });
         }
     </script>
 
