@@ -326,6 +326,8 @@
        }
         function addMini(miniKey){
             console.log("hey");
+            var miniRef = new Firebase("https://brouze.firebaseio.com/users/" + miniKey+"/basicInfo");
+            console.log(miniRef.name);
             $("#miniList").append('<div class="container mini-profile"><div class="row"><div class="col-md-4"><img class="img-responsive" src="http://www.babylonpuzzles.com/6866-thickbox_default/500-pcs---curious-kitten---square-by-ravensburger.jpg" id="mini-pic"></div><div class="col-md-8"><h2>Buttface McGee</h2><h3>Junior at Piedmont High</h3><h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...</h4></div></div></div>');
             
                                   }
